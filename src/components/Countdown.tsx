@@ -7,9 +7,8 @@ interface CountdownProps {
   date: string;
 }
 
-let interval: ReturnType<typeof setInterval>;
-
 const Countdown: FC<CountdownProps> = ({ date }) => {
+  let interval: ReturnType<typeof setInterval>;
   const now = new Date();
   const selectedDate = new Date(date);
   const millisecondsLeft = selectedDate.getTime() - now.getTime();
